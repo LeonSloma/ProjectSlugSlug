@@ -1,0 +1,23 @@
+{
+  "Start": {
+    "Lines": [
+      {
+        "Character": "Slug",
+        "Text": "Bingledick!"
+      },
+      {
+        "Character": "Slug",
+        "Text": "Die bastard!"
+      }
+    ],
+    "Events": [
+      {
+        "Group": "Slug",
+        "Method": "SetHostile",
+        "Args": [
+          "true"
+        ]
+      }
+    ]
+  }
+}

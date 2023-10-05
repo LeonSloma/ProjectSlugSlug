@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bvomgiusye4d6"
+path="res://.godot/imported/MallInterior.map-16e1fb33bdd001aa692d4f28ada694c1.tres"
+
+[deps]
+
+source_file="res://Maps/MallInterior.map"
+dest_files=["res://.godot/imported/MallInterior.map-16e1fb33bdd001aa692d4f28ada694c1.tres"]
+
+[params]
+

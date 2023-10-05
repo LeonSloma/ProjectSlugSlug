@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://oij1fychfxry"]
+
+[ext_resource type="Texture2D" uid="uid://bhysdkfmw287g" path="res://Textures/slug_animationspritesheet.png" id="1_aiwx4"]
+[ext_resource type="Script" path="res://Scripts/Character.cs" id="1_ard5q"]
+[ext_resource type="Script" path="res://Scripts/CharacterBehaviours/FollowPlayerBehaviour.cs" id="1_n8w8x"]
+[ext_resource type="Script" path="res://Scripts/StateMachine.cs" id="2_onp8v"]
+[ext_resource type="Script" path="res://Scripts/CharacterBehaviours/EngageDialogueBehaviour.cs" id="3_b7d1o"]
+[ext_resource type="Script" path="res://Scripts/CharacterBehaviours/LeadPlayerBehaviour.cs" id="4_br7iw"]
+[ext_resource type="Script" path="res://Prefabs/ShootTarget.cs" id="4_qrhws"]
+[ext_resource type="Script" path="res://Prefabs/StateLabel.cs" id="8_o8122"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6rxhh"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["Characters"]]
+collision_layer = 2
+script = ExtResource("1_ard5q")
+Health = 10
+
+[node name="Face" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651946, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_6rxhh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.753204, 0)
+billboard = 2
+shaded = true
+double_sided = false
+texture_filter = 4
+texture = ExtResource("1_aiwx4")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_onp8v")
+
+[node name="ShootTarget" type="Node" parent="StateMachine"]
+script = ExtResource("4_qrhws")
+
+[node name="LeadPlayer" type="Node" parent="StateMachine" groups=["LeadPlayer"]]
+script = ExtResource("4_br7iw")
+
+[node name="EngageDialogue" type="Node" parent="StateMachine" groups=["player_position_subscribers"]]
+script = ExtResource("3_b7d1o")
+
+[node name="FollowPlayer" type="Node" parent="StateMachine" groups=["player_position_subscribers"]]
+script = ExtResource("1_n8w8x")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17621, 0)
+billboard = 1
+text = "State:"
+script = ExtResource("8_o8122")

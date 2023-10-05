@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://0naghsqufe4o"]
+
+[ext_resource type="FontFile" uid="uid://5i1srge0oowd" path="res://Assets/Fonts/PixelOperator.ttf" id="1_q7swx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aaywa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agcxp"]
+content_margin_left = 5.0
+content_margin_top = 0.0
+content_margin_right = 5.0
+content_margin_bottom = 0.0
+bg_color = Color(0.258824, 0.258824, 0.235294, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.2, 0.182, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7drbr"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.22, 0.22, 0.198, 1)
+border_width_top = 2
+border_color = Color(0.2, 0.2, 0.178, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqm7r"]
+
+[resource]
+default_font = ExtResource("1_q7swx")
+Label/colors/font_color = Color(1, 0.882353, 0.780392, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0.15, 0.15, 0.1365, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 16
+Label/styles/normal = SubResource("StyleBoxEmpty_aaywa")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_agcxp")
+SubPanel/base_type = &"PanelContainer"
+SubPanel/styles/panel = SubResource("StyleBoxFlat_7drbr")
+TitleLabel/base_type = &"Label"
+TitleLabel/colors/font_color = Color(1, 0.415686, 0, 1)
+TitleLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TitleLabel/colors/font_shadow_color = Color(0.2, 0.2, 0.176, 1)
+TitleLabel/constants/line_spacing = 0
+TitleLabel/constants/outline_size = 0
+TitleLabel/constants/shadow_offset_x = 1
+TitleLabel/constants/shadow_offset_y = 1
+TitleLabel/constants/shadow_outline_size = 0
+TitleLabel/font_sizes/font_size = 16
+TitleLabel/styles/normal = SubResource("StyleBoxEmpty_bqm7r")

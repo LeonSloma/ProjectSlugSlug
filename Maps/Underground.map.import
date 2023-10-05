@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://b3m25j310ei0m"
+path="res://.godot/imported/Underground.map-0339607a077dbbd123e88a659f4f2ccf.tres"
+
+[deps]
+
+source_file="res://Maps/Underground.map"
+dest_files=["res://.godot/imported/Underground.map-0339607a077dbbd123e88a659f4f2ccf.tres"]
+
+[params]
+

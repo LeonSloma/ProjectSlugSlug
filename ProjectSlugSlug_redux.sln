@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSlugSlug_redux", "ProjectSlugSlug_redux.csproj", "{461E14AA-4D0D-4763-BBB4-4499F25E1857}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{461E14AA-4D0D-4763-BBB4-4499F25E1857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461E14AA-4D0D-4763-BBB4-4499F25E1857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461E14AA-4D0D-4763-BBB4-4499F25E1857}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{461E14AA-4D0D-4763-BBB4-4499F25E1857}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{461E14AA-4D0D-4763-BBB4-4499F25E1857}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{461E14AA-4D0D-4763-BBB4-4499F25E1857}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

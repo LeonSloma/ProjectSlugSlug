@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr0u3cyaeipdv"]
+
+[ext_resource type="Texture2D" uid="uid://dlrdd41wcbdco" path="res://Textures/fire.png" id="65_olk6f"]
+
+[sub_resource type="Gradient" id="Gradient_2k443"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ukrbe"]
+gradient = SubResource("Gradient_2k443")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sstqo"]
+lifetime_randomness = 0.66
+emission_shape = 3
+emission_box_extents = Vector3(0.2, 0.2, 0.2)
+direction = Vector3(0, 1, 0)
+spread = 16.86
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+linear_accel_min = 2.0
+linear_accel_max = 2.0
+color_ramp = SubResource("GradientTexture1D_ukrbe")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_14d5s"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("65_olk6f")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_exhtr"]
+material = SubResource("ORMMaterial3D_14d5s")
+size = Vector2(0.5, 1)
+orientation = 2
+
+[node name="StartingArea" type="Node"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19413, 1.43644, -20.5491)
+light_color = Color(1, 0.85098, 0, 1)
+light_energy = 2.93
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+distance_fade_begin = 3.0
+distance_fade_length = 15.0
+omni_range = 10.149
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23469, 1.0309, -20.6571)
+lifetime = 0.36
+speed_scale = 0.5
+visibility_aabb = AABB(0, 0, 0, 0.5, 0.5, 0.5)
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_sstqo")
+draw_pass_1 = SubResource("PlaneMesh_exhtr")

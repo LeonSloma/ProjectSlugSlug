@@ -1,0 +1,92 @@
+{
+  
+  "Start": {
+    "Lines": [
+      {
+        "Character": "Slug",
+        "Text": "You came out fuckin' tall!"
+      },
+      {
+        "Character": "Slug",
+        "Text": "Should probably take go on a lil' shopping trip, get your new life started!"
+      },
+      {
+        "Character": "Slug",
+        "Text": "Follow me, Beanpole. Let's hit the mall."
+      },
+      {
+        "Character": "Slug",
+        "Text": "Also I'm gay."
+      },
+      {
+        "Character": "Slug",
+        "Text": "We bang okay?"
+      }
+    ],
+    "Options": [
+      {
+        "ID": "Yes",
+        "Text": "Yes"
+      },
+      {
+        "ID": "No",
+        "Text": "No" 
+      }
+    ]
+  },
+
+  "Yes": {
+    "Lines": [
+      {
+        "Character": "Slug",
+        "Text": "Wowza!"
+      }
+    ],
+    "Events": [
+      {
+        "Group": "LeadPlayer",
+        "Method": "SetLocation",
+        "Args": [
+          "Slug", 
+          "MallEvent1"
+        ]
+      },
+      {
+        "Group": "DialogueSystem",
+        "Method": "AddUrgentDialogue",
+        "Args": [
+          "Slug",
+          "MallEvent1"
+        ]
+      }
+    ]
+  },
+
+  "No": {
+    "Lines": [
+      {
+        "Character": "Slug",
+        "Text": "You came out fuckin' tall! Baka!"
+      }
+    ],
+    "Events": [
+      {
+        "Group": "LeadPlayer",
+        "Method": "SetLocation",
+        "Args": [
+          "Slug", 
+          "MallEvent1"
+        ]
+      },
+      {
+        "Group": "DialogueSystem",
+        "Method": "AddUrgentDialogue",
+        "Args": [
+          "Slug",
+          "MallEvent1"
+        ]
+      }
+    ]
+  }
+
+}

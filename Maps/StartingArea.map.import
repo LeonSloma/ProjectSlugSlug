@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://c8ec3knvn1yjd"
+path="res://.godot/imported/StartingArea.map-1392d3c08cd7247557f2967b7a3dd9a7.tres"
+
+[deps]
+
+source_file="res://Maps/StartingArea.map"
+dest_files=["res://.godot/imported/StartingArea.map-1392d3c08cd7247557f2967b7a3dd9a7.tres"]
+
+[params]
+

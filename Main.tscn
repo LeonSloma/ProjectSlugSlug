@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk7ubpg6ck1i"]
+
+[ext_resource type="Script" path="res://World.cs" id="1_gg7ji"]
+[ext_resource type="PackedScene" uid="uid://d38sencb6uxv4" path="res://Maps/MallInteriorExterior.tscn" id="2_rmpsr"]
+[ext_resource type="PackedScene" uid="uid://bcs6ir4l7kvd" path="res://Prefabs/player.tscn" id="3_xu3ks"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g3t2m"]
+
+[sub_resource type="Sky" id="Sky_83aau"]
+sky_material = SubResource("ProceduralSkyMaterial_g3t2m")
+
+[sub_resource type="Environment" id="Environment_8ujg4"]
+background_mode = 2
+background_color = Color(0.439216, 0.439216, 0.439216, 1)
+sky = SubResource("Sky_83aau")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 2.43
+tonemap_mode = 1
+ssao_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.73
+sdfgi_y_scale = 2
+sdfgi_energy = 23.55
+fog_enabled = true
+fog_light_energy = 1.7
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_74ppn"]
+dof_blur_far_distance = 0.14
+dof_blur_near_distance = 1.36
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2u86w"]
+
+[node name="Main" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8ujg4")
+camera_attributes = SubResource("CameraAttributesPractical_74ppn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, -0.371659, 0.640112, -0.107735)
+light_bake_mode = 1
+directional_shadow_mode = 0
+sky_mode = 1
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, -0.371659, 0.640112, -0.107735)
+navigation_mesh = SubResource("NavigationMesh_2u86w")
+
+[node name="World" type="Node" parent="NavigationRegion3D"]
+script = ExtResource("1_gg7ji")
+
+[node name="MallInteriorExterior" parent="NavigationRegion3D/World" instance=ExtResource("2_rmpsr")]
+
+[node name="Player" parent="." instance=ExtResource("3_xu3ks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3935, 1.94067, 0)
